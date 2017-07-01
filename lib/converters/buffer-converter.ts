@@ -20,6 +20,10 @@ export class BufferConverter implements IPropertyConverter {
         return Buffer.from(value as string, this._encoding);
     }
 
+    public collapseArrayWithSingleItem():boolean {
+        return false;
+    }
+
     constructor(encoding:string = "json") {
         this._encoding = encoding;
     }

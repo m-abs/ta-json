@@ -52,7 +52,14 @@ function serializeRootObject(object:IDynamicObject, type:Function = Object.getPr
 }
 
 function serializeArray(array:IDynamicObject[], definition:PropertyDefinition):JsonValue {
-    return array.map(v => serializeObject(v, definition));
+    const arr = array.map(v => serializeObject(v, definition));
+    if (arr.length === 1) {
+        const converter = definition.converter || propertyConverters.get(definition.type);
+        if (converter && converter.collapseArrayWithSingleItem()) {
+            return arr[0];
+        }
+    }
+    return arr;
 }
 
 function serializeObject(object:IDynamicObject, definition:PropertyDefinition):JsonValue {

@@ -60,7 +60,14 @@ function deserializeRootObject(object:JsonValue, objectType:Function = Object, o
 }
 
 function deserializeArray(array:JsonValue, definition:PropertyDefinition, options:IParseOptions):IDynamicObject {
-    return (array as JsonValueArray).map(v => deserializeObject(v, definition, options));
+
+    const converter = definition.converter || propertyConverters.get(definition.type);
+    const arr = (array instanceof Array) ?
+        array :
+        (converter && converter.collapseArrayWithSingleItem() ?
+            [array] :
+            array);
+    return (arr as JsonValueArray).map(v => deserializeObject(v, definition, options));
 }
 
 function deserializeObject(object:JsonValue, definition:PropertyDefinition, options:IParseOptions):IDynamicObject {

@@ -5,6 +5,7 @@ import {JsonValue} from '../types';
 export interface IPropertyConverter {
     serialize(property:any):JsonValue;
     deserialize(value:JsonValue):any;
+    collapseArrayWithSingleItem():boolean;
 }
 
 export const propertyConverters:Map<Function, IPropertyConverter> = new Map<Function, IPropertyConverter>();
