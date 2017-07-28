@@ -1,6 +1,6 @@
 {
   "name": "ta-json",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Type-aware JSON serializer/parser",
   "main": "dist/cjs/index.js",
   "types": "dist/es6/index.d.ts",
@@ -34,7 +34,7 @@
   ],
   "homepage": "https://github.com/edcarroll/ta-json#readme",
   "dependencies": {
-    "@types/node": "^6.0.55",
+    "@types/node": "^6.0.55 || >= 7.0.0",
     "reflect-metadata": "^0.1.9"
   },
   "devDependencies": {
