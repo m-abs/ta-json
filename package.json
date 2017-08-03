@@ -37,9 +37,9 @@
     "reflect-metadata": "latest"
   },
   "devDependencies": {
+    "@edcarroll/code-style": "latest",
     "@types/node": "latest",
-    "typescript": "latest",
-    "@edcarroll/code-style": "^2.0.0",
-    "tslint": "^5.5.0"
+    "tslint": "latest",
+    "typescript": "latest"
   }
 }
