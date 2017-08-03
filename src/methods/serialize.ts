@@ -1,7 +1,7 @@
-import {propertyConverters} from './../converters/converter';
-import {PropertyDefinition} from '../classes/property-definition';
-import {JsonValue, IDynamicObject} from '../types';
-import {objectDefinitions, getInheritanceChain, getTypedInheritanceChain} from '../classes/object-definition';
+import { propertyConverters } from "./../converters/converter";
+import { PropertyDefinition } from "../classes/property-definition";
+import { JsonValue, IDynamicObject } from "../types";
+import { objectDefinitions, getInheritanceChain, getTypedInheritanceChain, ObjectDefinition } from "../classes/object-definition";
 
 export function serialize(value:IDynamicObject | IDynamicObject[], type?:Function):JsonValue {
     if (value.constructor === Array) {
@@ -13,24 +13,26 @@ export function serialize(value:IDynamicObject | IDynamicObject[], type?:Functio
 
 function serializeRootObject(object:IDynamicObject, type:Function = Object.getPrototypeOf(object).constructor):JsonValue {
     const inheritanceChain = getTypedInheritanceChain(type);
-    
-    if (inheritanceChain.length == 0) {
+
+    if (inheritanceChain.length === 0) {
         return object;
     }
 
-    const definitions = inheritanceChain.map(t => objectDefinitions.get(t));
+    const definitions = inheritanceChain
+        .map(t => objectDefinitions.get(t))
+        .filter(t => !!t) as ObjectDefinition[]; // Typescript doesn't yet support the undefined filter
 
     const output:IDynamicObject = {};
 
     definitions.forEach(d => {
         d.properties.forEach((p, key) => {
             if (!p.type) {
-                throw new Error(`Cannot serialize property '${key}' without type!`)
+                throw new Error(`Cannot serialize property '${key}' without type!`);
             }
 
             const value = object[key];
 
-            if ((value === null || value === undefined) || p.writeonly) {
+            if (value == undefined || p.writeonly) {
                 return;
             }
 
