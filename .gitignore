@@ -46,3 +46,4 @@ jspm_packages
 *.d.ts
 *.js
 *.js.map
+*.tgz

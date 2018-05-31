@@ -1,7 +1,7 @@
 {
-  "name": "ta-json",
-  "version": "2.3.0",
-  "description": "Type-aware JSON serializer/parser",
+  "name": "@nota/ta-json",
+  "version": "2.3.1",
+  "description": "Type-aware JSON serializer/parser - patches from danielweck/ta-json",
   "main": "dist/cjs/index.js",
   "types": "dist/es6/index.d.ts",
   "module": "dist/es6/index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edcarroll/ta-json.git"
+    "url": "git+https://github.com/m-abs/ta-json.git#nota/ta-json"
   },
   "author": "Edward Carroll",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/edcarroll/ta-json/issues"
+    "url": "https://github.com/m-abs/ta-json/issues"
   },
   "keywords": [
     "json",
@@ -32,14 +32,14 @@
     "serializer",
     "parser"
   ],
-  "homepage": "https://github.com/edcarroll/ta-json#readme",
+  "homepage": "https://github.com/m-abs/ta-json#readme",
   "dependencies": {
-    "reflect-metadata": "latest"
+    "@types/node": "^6.0.55",
+    "reflect-metadata": "^0.1.9"
   },
   "devDependencies": {
-    "@edcarroll/code-style": "latest",
-    "@types/node": "latest",
-    "tslint": "latest",
-    "typescript": "latest"
+    "@edcarroll/code-style": "^2.0.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.3.4"
   }
 }

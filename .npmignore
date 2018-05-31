@@ -43,3 +43,4 @@ jspm_packages
 # TS Files
 *.ts
 !*.d.ts
+*.tgz
