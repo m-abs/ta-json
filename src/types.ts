@@ -22,3 +22,6 @@ export interface IDynamicObject {
 export interface IParseOptions {
     runConstructor?:boolean;
 }
+
+export type TaPropertyDecorator = (target:Object, propertyKey:string) => void;
+

@@ -1,6 +1,6 @@
 import { getDefinition } from "../classes/object-definition";
 import { IPropertyConverter } from "../converters/converter";
-import { ParameterlessConstructor } from "../types";
+import { ParameterlessConstructor, TaPropertyDecorator } from "../types";
 
 // tslint:disable:ext-variable-name only-arrow-functions
 

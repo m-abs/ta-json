@@ -1,4 +1,5 @@
 import { getDefinition } from "../classes/object-definition";
+import { TaPropertyDecorator } from "../types";
 
 // tslint:disable:ext-variable-name only-arrow-functions
 
