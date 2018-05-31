@@ -1,4 +1,6 @@
 {
   "extends": "@edcarroll/code-style/tslint",
-  "rules": {}
+  "rules": {
+    "typeof-compare": false
+  }
 }

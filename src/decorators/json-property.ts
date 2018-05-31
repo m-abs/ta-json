@@ -3,7 +3,7 @@ import { getDefinition } from "../classes/object-definition";
 
 // tslint:disable:ext-variable-name only-arrow-functions
 
-export function JsonProperty(propertyName?:string):PropertyDecorator {
+export function JsonProperty(propertyName?:string):TaPropertyDecorator {
     return function(target:any, key:string):void {
         const type = Reflect.getMetadata("design:type", target, key);
 
