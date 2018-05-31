@@ -1,6 +1,6 @@
 {
   "name": "@nota/ta-json",
-  "version": "2.3.1-r20180531-1",
+  "version": "2.3.1-r20180531-2",
   "description": "Type-aware JSON serializer/parser - patches from danielweck/ta-json",
   "main": "dist/cjs/index.js",
   "types": "dist/es6/index.d.ts",
