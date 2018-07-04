@@ -1,6 +1,6 @@
 {
   "name": "@nota/ta-json",
-  "version": "2.3.1-r20180531-2",
+  "version": "2.3.1-r20180704-1",
   "description": "Type-aware JSON serializer/parser - patches from danielweck/ta-json",
   "main": "dist/cjs/index.js",
   "types": "dist/es6/index.d.ts",
@@ -34,12 +34,12 @@
   ],
   "homepage": "https://github.com/m-abs/ta-json#readme",
   "dependencies": {
-    "@types/node": "^6.0.55",
-    "reflect-metadata": "^0.1.9"
+    "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
     "@edcarroll/code-style": "^2.0.0",
+    "@types/node": "^8.0.58",
     "tslint": "^5.10.0",
-    "typescript": "^2.8.4"
+    "typescript": "^2.7.2"
   }
 }
